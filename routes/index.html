@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <title>Hello, world!</title>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta name="description" content="" />
+  <script>
+    function getUrlVars() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+      });
+      return vars;
+    }
+
+    function getUrlParam(parameter, defaultvalue){
+      var urlparameter = defaultvalue;
+      if(window.location.href.indexOf(parameter) > -1){
+        urlparameter = getUrlVars()[parameter];
+      }
+      if (urlparameter !== undefined) {
+        return urlparameter;
+      } else {
+        return defaultvalue;
+      }
+    }
+
+    var url = getUrlParam('redirecturl','');
+    console.log("url: " + url)
+    window.location.href = url
+
+  </script>
+</head>
+
+<body>
+
+<a href="/Medaica-Live-Patient-Exam-Beta.zip">
+  download mac app
+</a>
+
+</body>
+
+</html>
